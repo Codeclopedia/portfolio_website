@@ -4,6 +4,7 @@ function Header(){
           Encoded
           
           <div className="font-normal text-lg cursor-pointer">More</div>
+          
         </div>
     )
   }
