@@ -33,4 +33,8 @@ body {
   .floating-icon{
     @apply absolute grayscale hover:grayscale-0 transition duration-300
   }
+
+  .title-text{
+    @apply text-white font-bold text-center
+  }
 }
