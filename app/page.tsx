@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef } from "react";
 import IntroSection from "@/components/main/intro_section";
+import About from "@/components/main/about_section";
 
 export default function Home() {
 
@@ -11,12 +12,7 @@ export default function Home() {
       <IntroSection/>
 
       {/* Page 2 */}
-      <section className="h-screen bg-gradient-to-b from-[#05000d] to-gray-900 flex items-center justify-center">
-        <div className="text-center text-white">
-          <h1 className="text-5xl font-bold mb-4"></h1>
-          <p className="text-lg">This is the content of the second page. Scroll to explore more!</p>
-        </div>
-      </section>
+     <About/>
     </div>
   );
 }

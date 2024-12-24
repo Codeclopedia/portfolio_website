@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* FloatingTechStacks.module.css */
+
+.floating-icon{
+  @apply absolute grayscale hover:grayscale-0 transition duration-300
+}
+  
+  .animate-levitate {
+    animation: levitate 4s ease-in-out infinite;
+  }
+  
+  .animate-levitate2 {
+    animation: levitate2 6s ease-in-out infinite;
+  }
+  
+  .animate-levitate3 {
+    animation: levitate3 5s ease-in-out infinite;
+  }
+  
+  .animate-levitate4 {
+    animation: levitate4 7s ease-in-out infinite;
+  }
+  
+  .animate-levitate5 {
+    animation: levitate5 3.5s ease-in-out infinite;
+  }
+  
+  /* Floating Animations */
+  @keyframes levitate {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  @keyframes levitate2 {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+  
+  @keyframes levitate3 {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+  }
+  
+  @keyframes levitate4 {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-25px);
+    }
+  }
+  
+  @keyframes levitate5 {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+  
+  /* Opacity Settings */
+  .opacity-10 {
+    opacity: 0.1;
+  }
+  .opacity-20 {
+    opacity: 0.2;
+  }
+  .opacity-30 {
+    opacity: 0.3;
+  }
+  .opacity-60 {
+    opacity: 0.6;
+  }
+  .opacity-90 {
+    opacity: 0.9;
+  }
+  .opacity-100 {
+    opacity: 1;
+  }
+  
+  /* Rotation */
+  .rotate-5 {
+    transform: rotate(5deg);
+  }
+  .rotate-12 {
+    transform: rotate(12deg);
+  }
+  .rotate-40 {
+    transform: rotate(40deg);
+  }
+  
+  /* Z-index */
+  .z-10 {
+    z-index: 10;
+  }
+  .z-20 {
+    z-index: 20;
+  }
+  /* Add more as needed */

@@ -1,0 +1,13 @@
+.more_menu_style {
+    @apply absolute p-4 right-[120px] w-[200px] h-min bg-gradient-to-b from-[#0e0028] to-[#05000d] border border-slate-200 rounded-lg;
+  
+    /* Ensure hidden state at the start */
+    opacity: 0; 
+    clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+    display: none;
+  }
+  
+  .more_menu_style p {
+    @apply items-center text-white text-lg font-bold mb-4 hover:underline;
+  }
+  

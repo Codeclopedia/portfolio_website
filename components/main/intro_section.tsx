@@ -7,6 +7,8 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/src/ScrollTrigger";
+import "../styles/intro_styles.css";
+
 
 export default function IntroSection() {
     const heroRef = useRef<HTMLDivElement | null>(null);
@@ -27,6 +29,10 @@ export default function IntroSection() {
                 y: -50,
                 duration: 1.5,
                 ease: "power3.out",
+                delay: 0.5,  // Delay for smooth initial load
+                onStart: () => { // Remove return statement here
+                    if (heroRef.current) heroRef.current.style.visibility = 'visible';
+                },
             });
 
             // Clouds animation
@@ -38,19 +44,28 @@ export default function IntroSection() {
                     stagger: 0.3,
                     duration: 2,
                     ease: "power3.out",
+                    onStart: () => { // Remove return statement here
+                        cloudsRef.current.forEach(cloud => {
+                            if (cloud) cloud.style.visibility = 'visible';
+                        });
+                    },
                 },
-                "<" // Starts the clouds animation concurrently with the hero section
+                "<"
             );
+
             // Developer image animation
             tl.from(
                 imageRef.current,
                 {
                     opacity: 0,
-                    duration:3,
                     y: 75,
+                    duration: 3,
                     ease: "power3.out",
+                    onStart: () => { // Remove return statement here
+                        if (imageRef.current) imageRef.current.style.visibility = 'visible';
+                    },
                 },
-                "-=1" // Overlaps this animation with the previous one
+                "-=1"
             );
 
             // Floating Tech Stacks animation
@@ -59,14 +74,14 @@ export default function IntroSection() {
                 {
                     opacity: 0,
                     y: 100,
-                    delay:2,
-                    duration: 5,
+                    duration: 2,
                     ease: "power3.out",
+                    onStart: ()=>{
+                        if (techStackRef.current) techStackRef.current.style.visibility = 'visible';
+                    }
                 },
-                "+=0.5" // Delays the start slightly after previous animation
+                "+=0.5"
             );
-
-            
 
             // Header animation with ScrollTrigger
             gsap.to(headerRef.current, {
@@ -74,6 +89,7 @@ export default function IntroSection() {
                 y: 0,
                 duration: 1.5,
                 ease: "power3.out",
+                onStart: ()=>{headerRef.current!.style.visibility = "visible"},
                 scrollTrigger: {
                     trigger: headerRef.current,
                     start: "top 80%",
@@ -81,10 +97,6 @@ export default function IntroSection() {
                     scrub: true,
                 },
             });
-
-            gsap.to(techStackRef.current, {
-                opacity: 1, y: 0, delay: 2, duration: 10, stagger: 0.3, ease: "power3.out"
-            })
 
             // Cloud floating animation
             cloudsRef.current.forEach((cloud, index) => {
@@ -98,14 +110,16 @@ export default function IntroSection() {
                     });
                 }
             });
-
-           
         }
     }, []);
 
     return (
-        <div className="relative h-screen bg-gradient-to-b from-[#0e0028] to-[#05000d]">
-            <div className="absolute inset-0" ref={heroRef}>
+        <div id="home" className="relative h-screen bg-gradient-to-b from-[#0e0028] to-[#05000d]">
+            <div
+                className="absolute inset-0 hero-section"
+                ref={heroRef}
+                style={{ visibility: 'hidden' }}  // Hide initially
+            >
                 <HeroRings />
             </div>
             <Clouds cloudsRef={cloudsRef} />
@@ -115,14 +129,20 @@ export default function IntroSection() {
             </div>
             <Image
                 ref={imageRef}
-                className="absolute left-1/2 -translate-x-1/2 opacity-100 z-0"
+                className="absolute left-1/2 -translate-x-1/2 opacity-100 z-0 developer-image"
                 alt="test"
                 src="/images/objects/developer.png"
                 width={700}
                 height={700}
+                style={{ visibility: 'hidden' }}  // Hide initially
             />
+            
             <Flaoting_TechStacks techStackRef={techStackRef} />
-            <div ref={headerRef}>
+            <div
+                className="header"
+                ref={headerRef}
+                style={{ visibility: 'hidden' }}  // Hide initially
+            >
                 <Header />
             </div>
         </div>
@@ -140,40 +160,38 @@ function Clouds({ cloudsRef }: CloudsProps) {
                 ref={(el) => {
                     cloudsRef.current[0] = el;
                 }}
-                className="absolute top-40 opacity-30 z-0"
+                className="absolute top-40 opacity-30 z-0 cloud"
                 src="/images/clouds/cloud2.webp"
                 alt="Cloud 2"
                 width={200}
                 height={200}
                 priority
+                style={{ visibility: 'hidden' }}  // Hide initially
             />
             <Image
                 ref={(el) => {
                     cloudsRef.current[1] = el;
                 }}
-                className="absolute top-40 right-[100px] opacity-30 z-0"
+                className="absolute top-40 right-[100px] opacity-30 z-0 cloud"
                 src="/images/clouds/cloud1.webp"
                 alt="Cloud 1"
                 width={200}
                 height={200}
                 priority
+                style={{ visibility: 'hidden' }}  // Hide initially
             />
             <Image
                 ref={(el) => {
                     cloudsRef.current[2] = el;
                 }}
-                className="absolute top-40 right-[700px] opacity-30 z-0"
+                className="absolute top-40 right-[700px] opacity-30 z-0 cloud"
                 src="/images/clouds/cloud3.webp"
                 alt="Cloud 3"
                 width={200}
                 height={200}
                 priority
+                style={{ visibility: 'hidden' }}  // Hide initially
             />
         </div>
     );
 }
-
-
-
-
-
