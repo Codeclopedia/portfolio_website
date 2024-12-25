@@ -2,88 +2,114 @@
 @tailwind components;
 @tailwind utilities;
 
-.section2{
-    @apply h-screen px-5 bg-gradient-to-b from-[#05000d] to-gray-900 flex items-start 
+.section2 {
+  @apply h-screen px-5 bg-gradient-to-b from-[#05000d] to-gray-900 flex items-start
 }
 
-.section2 div{
-    @apply text-start text-white
+.section2 div {
+  @apply text-start text-white
 }
 
-.section2 h1{
-    @apply flex text-[6rem] font-bold mb-4 gap-10 
+.section2 h1 {
+  position: flex;
+  font-size: 7rem;
+  font-weight: bold;
+  margin-bottom: 4;
+  gap: 10px;
+  background: -webkit-linear-gradient(45deg, #08009f00, #fdfdfd 50%);
+  -webkit-background-clip: text;
+  /* apply background clip */
+  -webkit-text-fill-color: transparent;
+}
+
+.section2 p {
+  background: -webkit-linear-gradient(45deg, #017201, #37ff00 50%);
+  -webkit-background-clip: text;
+  /* apply background clip */
+  -webkit-text-fill-color: transparent;
 }
 
 /* Full-Screen Background Container */
 .background-container {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0; /* Push far behind all content */
-    overflow: hidden;
-    /* background: linear-gradient(135deg, #05000d, #0f1d40); */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  /* Push far behind all content */
+  overflow: hidden;
+  /* background: linear-gradient(135deg, #05000d, #0f1d40); */
+}
+
+/* Background Shapes */
+.background-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.3;
+  animation: levitate 6s ease-in-out infinite, rotate 8s linear infinite;
+}
+
+/* Shape Variations */
+.shape1 {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(135deg, #ff7eb3, #ff758c);
+  top: 10%;
+  left: 20%;
+}
+
+.shape2 {
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(135deg, #84fab0, #8fd3f4);
+  top: 50%;
+  left: 70%;
+}
+
+.shape3 {
+  width: 250px;
+  height: 250px;
+  background: linear-gradient(135deg, #fddb92, #d1fdff);
+  top: 80%;
+  left: 30%;
+}
+
+/* Animations */
+@keyframes levitate {
+
+  0%,
+  100% {
+    transform: translateY(0);
   }
-  
-  /* Background Shapes */
-  .background-shapes {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+
+  50% {
+    transform: translateY(-30px);
   }
-  
-  .shape {
-    position: absolute;
-    border-radius: 50%;
-    opacity: 0.3;
-    animation: levitate 6s ease-in-out infinite, rotate 8s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
   }
-  
-  /* Shape Variations */
-  .shape1 {
-    width: 300px;
-    height: 300px;
-    background: linear-gradient(135deg, #ff7eb3, #ff758c);
-    top: 10%;
-    left: 20%;
+
+  100% {
+    transform: rotate(360deg);
   }
-  
-  .shape2 {
-    width: 400px;
-    height: 400px;
-    background: linear-gradient(135deg, #84fab0, #8fd3f4);
-    top: 50%;
-    left: 70%;
-  }
-  
-  .shape3 {
-    width: 250px;
-    height: 250px;
-    background: linear-gradient(135deg, #fddb92, #d1fdff);
-    top: 80%;
-    left: 30%;
-  }
-  
-  /* Animations */
-  @keyframes levitate {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-30px);
-    }
-  }
-  
-  @keyframes rotate {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-  
+}
+
+.service_button_style{
+  @apply flex flex-wrap gap-4 p-4 justify-start content-center
+}
+
+.service_button_style button {
+  @apply flex h-min items-center px-4 py-2 border rounded-3xl text-gray-400 border-gray-400 hover:bg-gray-400 hover:text-black transition
+}

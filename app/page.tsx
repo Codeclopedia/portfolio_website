@@ -3,6 +3,7 @@
 import React, { useEffect, useRef } from "react";
 import IntroSection from "@/components/main/intro_section";
 import About from "@/components/main/about_section";
+import CreativeMessage from "@/components/objects/creative_message";
 
 export default function Home() {
 
@@ -13,6 +14,7 @@ export default function Home() {
 
       {/* Page 2 */}
      <About/>
+     <CreativeMessage/>
     </div>
   );
 }
