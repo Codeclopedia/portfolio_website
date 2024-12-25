@@ -17,11 +17,11 @@ const DesignList: React.FC = () => {
   ];
 
   return (
-    <div className="flex flex-col gap-6 w-full p-6">
+    <div className="flex flex-col  w-full py-16 h-min">
       {designOptions.map((option, index) => (
         <div
           key={index}
-          className="relative flex items-center h-[100px] justify-between border-b border-gray-700 pb-4"
+          className="relative flex items-center h-[120px] justify-between border-b border-gray-700 hover:bg-gray-700"
           onMouseEnter={() => setHoveredIndex(index)}
           onMouseLeave={() => setHoveredIndex(null)}
         >

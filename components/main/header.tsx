@@ -112,8 +112,8 @@ function MoreMenuSection({ container }: MoreMenuSectionProps) {
     <div className="more_menu_style" ref={container}>
       <p onClick={()=>scrollToSection("home")}>Home</p>
       <p onClick={()=>scrollToSection("about")}>About</p>
-      <p>Projects</p>
-      <p>Contact Me</p>
+      <p onClick={()=>scrollToSection("projects")}>Projects</p>
+      <p onClick={()=>scrollToSection("contact")}>Contact Me</p>
     </div>
   );
 }

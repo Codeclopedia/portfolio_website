@@ -10,7 +10,7 @@ export default function About() {
       <div className="w-full">
         <div className="flex w-full justify-between">
           <AboutTextSection/> 
-          <ServicesButtons/>
+          <ServicesButtons listOfButtons={["design","Development"]}/>
         </div>
         <ComputerDisplay />
       </div>
@@ -27,8 +27,8 @@ function AboutTextSection(){
 
 function ComputerDisplay() {
   return (
-    <div className="flex justify-between items-start w-full h-full">
-<DesignList/>
+    <div className="flex justify-between items-start w-full h-min">
+       <DesignList/>
     </div>
   );
 }
