@@ -1,7 +1,29 @@
+"use client"
+
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import { FormEvent, useState } from "react";
+
 export default function Contact() {
+
+  const[messageSending,setMessageSending]=useState(false);
+
+const onSubmit = async (e:FormEvent<HTMLButtonElement>)=>{
+  console.log("inside submit")
+  e.preventDefault();
+  setMessageSending(true);
+  await new Promise((resolve) => setTimeout(resolve, 2000) );
+  setMessageSending(false);
+}
+
   return (
     <>
       <div className="min-h-screen bg-gradient-to-br from-gray-900 to-[#05000d] flex items-center justify-center px-4">
+     {messageSending && <DotLottieReact
+      className="absolute"
+      src="https://lottie.host/5af6114b-6c4a-437e-9fa5-19a48a654e79/Nfpj1CsBh8.lottie"
+      loop
+      autoplay
+    />}
         <div className="bg-white rounded-lg shadow-lg p-8 w-full max-w-4xl">
           <h1 className="text-3xl font-bold text-gray-800 mb-4 text-center">Contact Us</h1>
           <p className="text-gray-600 text-center mb-6">
@@ -46,6 +68,7 @@ export default function Contact() {
                 ></textarea>
               </div>
               <button
+              onClick={onSubmit}
                 type="submit"
                 className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
               >
@@ -54,16 +77,16 @@ export default function Contact() {
             </form>
             <div className="space-y-4 text-gray-600">
               <div>
-                <h2 className="text-lg font-semibold text-gray-800">Our Address</h2>
-                <p>123 Modern St, Suite 456<br />Cityville, Country 78910</p>
+                <h2 className="text-lg font-semibold text-gray-800">Address</h2>
+                <p>Delhi, India</p>
               </div>
               <div>
                 <h2 className="text-lg font-semibold text-gray-800">Call Us</h2>
-                <p>+1 (234) 567-890</p>
+                <p>+91 7669486618</p>
               </div>
               <div>
                 <h2 className="text-lg font-semibold text-gray-800">Email</h2>
-                <p>contact@yourwebsite.com</p>
+                <p>joshi.chetan.work@gmail.com</p>
               </div>
               <div className="flex space-x-4">
                 <a
@@ -81,7 +104,7 @@ export default function Contact() {
                   </svg>
                 </a>
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/in/chetan-joshi-216178250/"
                   className="text-blue-600 hover:text-blue-800"
                   aria-label="LinkedIn"
                 >
