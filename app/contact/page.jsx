@@ -1,36 +1,82 @@
-"use client"
+"use client";
 
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import { FormEvent, useState } from "react";
 
 export default function Contact() {
+  const [messageSending, setMessageSending] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [errors, setErrors] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
 
-  const[messageSending,setMessageSending]=useState(false);
+  const updateFormData = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
-const onSubmit = async (e:FormEvent<HTMLButtonElement>)=>{
-  console.log("inside submit")
-  e.preventDefault();
-  setMessageSending(true);
-  await new Promise((resolve) => setTimeout(resolve, 2000) );
-  setMessageSending(false);
-}
+  const validateForm = () => {
+    let isValid = true;
+    const newErrors = {
+      name: "",
+      email: "",
+      message: "",
+    };
+
+    if (!formData.name) {
+      newErrors.name = "Name is required.";
+      isValid = false;
+    }
+    if (!formData.email) {
+      newErrors.email = "Email is required.";
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = "Email is invalid.";
+      isValid = false;
+    }
+    if (!formData.message) {
+      newErrors.message = "Message is required.";
+      isValid = false;
+    }
+
+    setErrors(newErrors);
+    return isValid;
+  };
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!validateForm()) {
+      return;
+    }
+
+    setMessageSending(true);
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+    setMessageSending(false);
+  };
 
   return (
     <>
       <div className="min-h-screen bg-gradient-to-br from-gray-900 to-[#05000d] flex items-center justify-center px-4">
-     {messageSending && <DotLottieReact
-      className="absolute"
-      src="https://lottie.host/5af6114b-6c4a-437e-9fa5-19a48a654e79/Nfpj1CsBh8.lottie"
-      loop
-      autoplay
-    />}
+        {messageSending && (
+          <DotLottieReact
+            className="absolute"
+            src="https://lottie.host/5af6114b-6c4a-437e-9fa5-19a48a654e79/Nfpj1CsBh8.lottie"
+            loop
+            autoplay
+          />
+        )}
         <div className="bg-white rounded-lg shadow-lg p-8 w-full max-w-4xl">
           <h1 className="text-3xl font-bold text-gray-800 mb-4 text-center">Contact Us</h1>
           <p className="text-gray-600 text-center mb-6">
             Got a question or want to work together? We'd love to hear from you!
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <form className="space-y-4">
+            <form onSubmit={onSubmit} className="contact-form space-y-4">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700">
                   Name
@@ -39,9 +85,12 @@ const onSubmit = async (e:FormEvent<HTMLButtonElement>)=>{
                   type="text"
                   id="name"
                   name="name"
+                  onChange={updateFormData}
                   placeholder="Your Name"
-                  className="mt-1 p-2 w-full border rounded-md focus:ring-blue-500 focus:border-blue-500 shadow-sm"
+                  value={formData.name}
+                  className="form-input mt-1 p-2 w-full border rounded-md focus:ring-blue-500 focus:border-blue-500 shadow-sm"
                 />
+                {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
               </div>
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-gray-700">
@@ -51,9 +100,12 @@ const onSubmit = async (e:FormEvent<HTMLButtonElement>)=>{
                   type="email"
                   id="email"
                   name="email"
+                  onChange={updateFormData}
                   placeholder="you@example.com"
-                  className="mt-1 p-2 w-full border rounded-md focus:ring-blue-500 focus:border-blue-500 shadow-sm"
+                  value={formData.email}
+                  className="form-input mt-1 p-2 w-full border rounded-md focus:ring-blue-500 focus:border-blue-500 shadow-sm"
                 />
+                {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
               </div>
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700">
@@ -64,11 +116,13 @@ const onSubmit = async (e:FormEvent<HTMLButtonElement>)=>{
                   name="message"
                   placeholder="Your Message"
                   rows={4}
-                  className="mt-1 p-2 w-full border rounded-md focus:ring-blue-500 focus:border-blue-500 shadow-sm"
+                  onChange={updateFormData}
+                  value={formData.message}
+                  className="form-textarea mt-1 p-2 w-full border rounded-md focus:ring-blue-500 focus:border-blue-500 shadow-sm"
                 ></textarea>
+                {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
               </div>
               <button
-              onClick={onSubmit}
                 type="submit"
                 className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
               >
