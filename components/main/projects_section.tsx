@@ -1,10 +1,6 @@
-
-
 import ServicesButtons from "../objects/services_button";
 import "../styles/project_styles.css";
 import '@splidejs/splide/css';
-
-
 
 export default function Projects() {
   return (

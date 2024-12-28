@@ -43,6 +43,8 @@ const DesignList: React.FC = () => {
                   <Image
                     key={imgIndex}
                     src={image}
+                    width={100}
+                    height={100}
                     alt={`Preview ${imgIndex}`}
                     className="absolute w-40 h-40 rounded-lg shadow-lg object-cover transition-transform duration-300 hover:scale-105"
                     style={{

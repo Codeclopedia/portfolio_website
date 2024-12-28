@@ -124,7 +124,7 @@ export default function IntroSection() {
             </div>
             <Clouds cloudsRef={cloudsRef} />
             <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-                <p className="title-text text-[50px] mb-[600px]">`Hello, I&apos;m`</p>
+                <p className="title-text text-[50px] mb-[600px]">Hello, I&apos;m</p>
                 <p className="absolute title-text text-[80px] mb-[450px] z-10">Chetan Joshi</p>
             </div>
             <Image
