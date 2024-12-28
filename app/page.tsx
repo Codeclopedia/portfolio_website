@@ -1,12 +1,11 @@
-"use client"
 
-import React, { useEffect, useRef } from "react";
+
+import React from "react";
 import IntroSection from "@/components/main/intro_section";
 import About from "@/components/main/about_section";
 import CreativeMessage from "@/components/objects/creative_message";
 import Projects from "@/components/main/projects_section";
 import DiscussIdeas from "@/components/main/design_idea";
-import Link from "next/dist/client/link";
 
 export default function Home() {
 

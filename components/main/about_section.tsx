@@ -1,9 +1,8 @@
 import DesignList from "../objects/project_type";
 import ServicesButtons from "../objects/services_button";
 import "../styles/about_section.css";
-import { Roboto } from "next/font/google";
 
-const roboto = Roboto({ subsets: ['latin'], weight: '400' });
+
 export default function About() {
   return (
     <section id="about" className="section2">

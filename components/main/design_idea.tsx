@@ -1,3 +1,4 @@
+"use client"
 import { useState } from "react";
 
 // pages/discuss-ideas.js
@@ -11,7 +12,7 @@ function onResumeHovered(value:boolean){
 
 function followMeClickAction(){
   console.log("follow me clicked")
-  var a = document.createElement("a");
+  const a = document.createElement("a");
   a.href="https://www.linkedin.com/in/chetan-joshi-216178250/";
   document.body.appendChild(a);
   a.click();
@@ -20,7 +21,7 @@ function followMeClickAction(){
 
 function contactMeClickAction(){
   console.log("follow me clicked")
-  var a = document.createElement("a");
+  const a = document.createElement("a");
   a.href="/contact/";
   document.body.appendChild(a);
   a.click();

@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+
 import ServicesButtons from "../objects/services_button";
 import "../styles/project_styles.css";
 import '@splidejs/splide/css';
@@ -22,9 +22,9 @@ function AboutTextSection() {
 }
 
 function AboutProjectTypeSection() {
-  const [typeOfProject, setTypeOfProject] = useState("websites")
+  // const [typeOfProject, setTypeOfProject] = useState("websites")
   return (
-    <div> <ServicesButtons buttonClick={(value: string) => { setTypeOfProject(value) }} listOfButtons={["Website", "Applications"]} />
+    <div> <ServicesButtons  listOfButtons={["Website", "Applications"]} />
       <section className="splide" role="group" aria-label="Splide Basic HTML Example">
         <div className="splide__track">
           <ul className="splide__list">

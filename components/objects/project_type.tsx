@@ -1,3 +1,5 @@
+"use client"
+import Image from "next/image";
 import React, { useState } from "react";
 
 interface DesignOption {
@@ -38,7 +40,7 @@ const DesignList: React.FC = () => {
             <div className="absolute top-0 right-40 transform translate-x-16 -translate-y-4">
               <div className="relative w-40 h-40">
                 {option.images.map((image, imgIndex) => (
-                  <img
+                  <Image
                     key={imgIndex}
                     src={image}
                     alt={`Preview ${imgIndex}`}

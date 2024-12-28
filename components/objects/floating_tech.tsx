@@ -1,6 +1,7 @@
 import { getRouteUrl } from "@/public/routing/icons";
 import { MutableRefObject } from "react";
 import "../styles/intro_styles.css"
+import Image from "next/image";
 
 interface FloatingTechStacksProps {
   techStackRef: MutableRefObject<HTMLDivElement | null>;
@@ -68,7 +69,7 @@ function SvgIcon({
     <div
       className={`floating-icon ${animate} ${z} ${left} ${right} ${bottom} ${rotate} ${opacity}`}
     >
-      <img
+      <Image
         className={`${z}`}
         src={getRouteUrl(iconName)}
         alt={iconName}
