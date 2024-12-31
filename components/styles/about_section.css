@@ -107,9 +107,9 @@
 }
 
 .service_button_style{
-  @apply flex flex-wrap gap-4 p-4 justify-start content-center
+  @apply flex flex-wrap gap-3 p-4 justify-start content-center
 }
 
 .service_button_style button {
-  @apply flex h-min items-center px-4 py-2 border rounded-3xl text-gray-400 border-gray-400 hover:bg-gray-400 hover:text-black transition
+  @apply flex h-min items-center px-4 py-2 gap-1 border rounded-3xl text-gray-400 border-gray-400 hover:bg-gray-400 hover:text-black transition
 }
