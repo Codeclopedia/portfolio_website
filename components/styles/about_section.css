@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 .section2 {
-  @apply h-min px-5 bg-gradient-to-b from-[#05000d] to-gray-900 flex items-start
+  @apply h-min px-5 bg-gradient-to-b from-[#05000d] to-gray-900 flex items-start;
 }
 
 .section2 div {
-  @apply text-start text-white
+  @apply text-start text-white;
 }
 
 .section2 h1 {
@@ -18,14 +18,13 @@
   gap: 10px;
   background: -webkit-linear-gradient(45deg, #08009f00, #fdfdfd 50%);
   -webkit-background-clip: text;
-  /* apply background clip */
   -webkit-text-fill-color: transparent;
 }
 
+/* Gradient text for paragraphs */
 .section2 p {
   background: -webkit-linear-gradient(45deg, #017201, #37ff00 50%);
   -webkit-background-clip: text;
-  /* apply background clip */
   -webkit-text-fill-color: transparent;
 }
 
@@ -37,9 +36,7 @@
   width: 100%;
   height: 100%;
   z-index: 0;
-  /* Push far behind all content */
   overflow: hidden;
-  /* background: linear-gradient(135deg, #05000d, #0f1d40); */
 }
 
 /* Background Shapes */
@@ -85,7 +82,6 @@
 
 /* Animations */
 @keyframes levitate {
-
   0%,
   100% {
     transform: translateY(0);
@@ -106,10 +102,133 @@
   }
 }
 
-.service_button_style{
-  @apply flex flex-wrap gap-3 p-4 justify-start content-center
+/* Service Buttons Styling */
+.service_button_style {
+  @apply flex flex-wrap gap-3 p-4 justify-start content-center;
 }
 
 .service_button_style button {
-  @apply flex h-min items-center px-4 py-2 gap-1 border rounded-3xl text-gray-400 border-gray-400 hover:bg-gray-400 hover:text-black transition
+  @apply flex h-min items-center px-4 py-2 gap-1 border rounded-3xl text-gray-400 border-gray-400 hover:bg-gray-400 hover:text-black transition;
+}
+
+/* Responsive Design */
+@media (max-width: 767px) {
+  .section2 {
+    @apply px-3 py-6;
+  }
+
+  .section2 h1 {
+    font-size: 3rem; /* Reduce font size on mobile */
+    margin-bottom: 2rem;
+  }
+
+  .section2 p {
+    font-size: 1rem; /* Adjust paragraph size on mobile */
+  }
+
+  .service_button_style {
+    @apply justify-center; /* Center buttons on small screens */
+  }
+
+  .service_button_style button {
+    @apply w-full text-center; /* Make buttons full-width on mobile */
+  }
+
+  /* Responsive background shapes */
+  .shape1 {
+    width: 200px;
+    height: 200px;
+    top: 15%;
+    left: 50%;
+  }
+
+  .shape2 {
+    width: 250px;
+    height: 250px;
+    top: 40%;
+    left: 50%;
+  }
+
+  .shape3 {
+    width: 150px;
+    height: 150px;
+    top: 70%;
+    left: 50%;
+  }
+}
+
+@media (min-width: 768px) {
+  /* For tablet and up: Larger padding, font sizes, and positioning */
+  .section2 {
+    @apply px-6 py-10;
+  }
+
+  .section2 h1 {
+    font-size: 5rem; /* Increase font size on tablets */
+    margin-bottom: 3rem;
+  }
+
+  .section2 p {
+    font-size: 1.125rem; /* Adjust paragraph size on tablets */
+  }
+
+  /* Responsive background shapes */
+  .shape1 {
+    width: 250px;
+    height: 250px;
+    top: 10%;
+    left: 25%;
+  }
+
+  .shape2 {
+    width: 300px;
+    height: 300px;
+    top: 50%;
+    left: 60%;
+  }
+
+  .shape3 {
+    width: 200px;
+    height: 200px;
+    top: 70%;
+    left: 30%;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* For desktop and up */
+  .section2 {
+    @apply px-12 py-16;
+  }
+
+  .section2 h1 {
+    font-size: 7rem; /* Keep large size for desktop */
+    margin-bottom: 4rem;
+  }
+
+  .section2 p {
+    font-size: 1.25rem; /* Adjust paragraph size for larger screens */
+  }
+
+  /* Background shapes */
+  .shape1 {
+    width: 300px;
+    height: 300px;
+    top: 10%;
+    left: 20%;
+  }
+
+  .shape2 {
+    width: 400px;
+    height: 400px;
+    top: 50%;
+    left: 70%;
+  }
+
+  .shape3 {
+    width: 250px;
+    height: 250px;
+    top: 80%;
+    left: 30%;
+  }
 }

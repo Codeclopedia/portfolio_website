@@ -18,10 +18,10 @@ export default function Projects() {
 
 function AboutTextSection() {
   return (
-    <div>
-      <h1 className="flex">
+    <div className="mb-8">
+      <h1 className="flex text-4xl sm:text-5xl font-bold">
         Projects
-        <p className="flex" style={{ fontFamily: "roboto" }}>
+        <p className="flex ml-2 text-4xl sm:text-5xl font-bold" style={{ fontFamily: "roboto" }}>
           .
         </p>
       </h1>
@@ -32,6 +32,42 @@ function AboutTextSection() {
 function AboutProjectTypeSection() {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
+  const websiteSliderData = [
+    {
+      imageSrc: "/images/projects/images.png",
+      title: "Project 01",
+      subtitle: "This is the first project.",
+    },
+    {
+      imageSrc: "/images/projects/images-2.png",
+      title: "Project 02",
+      subtitle: "This is the second project.",
+    },
+    {
+      imageSrc: "/images/projects/image-3.png",
+      title: "Project 03",
+      subtitle: "This is the third project.",
+    },
+  ];
+
+  const applicationSliderData = [
+    {
+      imageSrc: "/images/projects/images.png",
+      title: "Project 01",
+      subtitle: "This is the app first project.",
+    },
+    {
+      imageSrc: "/images/projects/images-2.png",
+      title: "Project 02",
+      subtitle: "This is the second project.",
+    },
+    {
+      imageSrc: "/images/projects/image-3.png",
+      title: "Project 03",
+      subtitle: "This is the third project.",
+    },
+  ];
+
   return (
     <div>
       <ServicesButtons
@@ -39,75 +75,53 @@ function AboutProjectTypeSection() {
         onButtonClick={(value) => setSelectedIndex(value)}
         listOfButtons={["Website", "Applications"]}
       />
-      <section>
-        <Splide
-          aria-label="Project Slides"
-          className = "p-4"
-          options={{
-            type: "loop",
-            perPage: 2,
-            perMove: 1,
-            gap: "5rem",
-            pagination: true,
-            breakpoints: {
-              768: { perPage: 1 },
-              1024: { perPage: 2 },
-            },
-          }}
-        >
-          <SplideSlide>
-            <div className="slide-content">
-              <div className="image-container">
-                <Image
-                  src="/images/projects/images.png" // Replace with your image path
-                  alt="Project 01"
-                  width={300}
-                  height={200}
-                  className="slide-image"
-                />
-                <div className="hover-box">
-                  <h3 className="hover-title">Project 01</h3>
-                  <p className="hover-subtitle">This is the first project.</p>
-                </div>
-              </div>
-            </div>
-          </SplideSlide>
-          <SplideSlide>
-            <div className="slide-content">
-              <div className="image-container">
-                <Image
-                  src="/images/projects/images-2.png"
-                  alt="Project 02"
-                  width={300}
-                  height={200}
-                  className="slide-image"
-                />
-                <div className="hover-box">
-                  <h3 className="hover-title">Project 02</h3>
-                  <p className="hover-subtitle">This is the second project.</p>
-                </div>
-              </div>
-            </div>
-          </SplideSlide>
-          <SplideSlide>
-            <div className="slide-content">
-              <div className="image-container">
-                <Image
-                  src="/images/projects/image-3.png"
-                  alt="Project 03"
-                  width={300}
-                  height={200}
-                  className="slide-image"
-                />
-                <div className="hover-box">
-                  <h3 className="hover-title">Project 03</h3>
-                  <p className="hover-subtitle">This is the third project.</p>
-                </div>
-              </div>
-            </div>
-          </SplideSlide>
-        </Splide>
-      </section>
+      <WebsiteProjectsSlider sliderData={selectedIndex === 0 ? websiteSliderData : applicationSliderData} />
     </div>
+  );
+}
+
+function WebsiteProjectsSlider({ sliderData }) {
+  return (
+    <section className="mt-8">
+      <Splide
+        aria-label="Project Slides"
+        className="p-4"
+        options={{
+          type: "loop",
+          perPage: 2,
+          perMove: 1,
+          omitEnd: true,
+          gap: "2rem", // Adjusted for better mobile spacing
+          focus: "center",
+          pagination: true,
+          breakpoints: {
+            768: { perPage: 1, gap: "1.5rem" }, // Adjust gap and slides per view for smaller screens
+            1024: { perPage: 2, gap: "2rem" }, // Adjust gap for medium-sized screens
+          },
+        }}
+      >
+        {sliderData.map((slide, index) => (
+          <SplideSlide key={index}>
+            <div className="slide-content flex flex-col items-center">
+              <div className="image-container relative w-full h-64 sm:h-80 md:h-96 lg:h-112">
+                <Image
+                  src={slide.imageSrc}
+                  alt={slide.title}
+                  layout="fill"
+                  objectFit="cover"
+                  className="slide-image rounded-lg"
+                />
+                <div className="hover-box absolute inset-0 bg-black bg-opacity-40 flex justify-center items-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                  <div className="text-center text-white">
+                    <h3 className="hover-title text-xl sm:text-2xl">{slide.title}</h3>
+                    <p className="hover-subtitle text-sm sm:text-base">{slide.subtitle}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </SplideSlide>
+        ))}
+      </Splide>
+    </section>
   );
 }

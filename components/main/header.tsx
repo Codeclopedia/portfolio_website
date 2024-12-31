@@ -72,40 +72,6 @@ function MoreMenuSection({ container }: MoreMenuSectionProps) {
     if (target) {
       target.scrollIntoView({ behavior: "smooth" });
     }
-  
-    // if (target) {
-    //   if ("scrollBehavior" in document.documentElement.style) {
-    //     target.scrollIntoView({ behavior: "smooth" });
-    //   } else {
-    //     // Fallback for older browsers
-    //     const targetPosition = target.offsetTop;
-    //     const startPosition = window.scrollY;
-    //     const distance = targetPosition - startPosition;
-    //     const duration = 1000;
-    //     var startTime: number | null = null;
-  
-    //     const easeInOutQuad = (t:number, b:number, c:number, d:number) => {
-    //       t /= d / 2;
-    //       if (t < 1) return (c / 2) * t * t + b;
-    //       t--;
-    //       return (-c / 2) * (t * (t - 2) - 1) + b;
-    //     };
-  
-    //     const animation = (currentTime:number) => {
-    //       if (!startTime) startTime = currentTime;
-    //       const timeElapsed = currentTime - startTime;
-    //       const run = easeInOutQuad(timeElapsed, startPosition, distance, duration);
-  
-    //       window.scrollTo(0, run);
-  
-    //       if (timeElapsed < duration) {
-    //         requestAnimationFrame(animation);
-    //       }
-    //     };
-  
-    //     requestAnimationFrame(animation);
-    //   }
-    // }
   };
   
   return (

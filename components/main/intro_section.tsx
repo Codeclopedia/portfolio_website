@@ -9,7 +9,6 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/src/ScrollTrigger";
 import "../styles/intro_styles.css";
 
-
 export default function IntroSection() {
     const heroRef = useRef<HTMLDivElement | null>(null);
     const techStackRef = useRef<HTMLDivElement | null>(null);
@@ -124,13 +123,17 @@ export default function IntroSection() {
             </div>
             <Clouds cloudsRef={cloudsRef} />
             <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-                <p className="title-text text-[50px] mb-[600px]">Hello, I&apos;m</p>
-                <p className="absolute title-text text-[80px] mb-[450px] z-10">Chetan Joshi</p>
+                <p className="title-text text-[40px] sm:text-[50px] lg:text-[60px] mb-[600px] text-center">
+                    Hello, I&apos;m
+                </p>
+                <p className="absolute title-text text-[60px] sm:text-[80px] lg:text-[100px] mb-[450px] z-10 text-center">
+                    Chetan Joshi
+                </p>
             </div>
             <Image
                 ref={imageRef}
-                className="absolute left-1/2 -translate-x-1/2 opacity-100 z-0 developer-image"
-                alt="test"
+                className="absolute left-1/2 -translate-x-1/2 top-20 opacity-100 z-0 developer-image max-w-[80%] sm:max-w-[60%] md:max-w-[50%] lg:max-w-[40%]"
+                alt="Developer Image"
                 src="/images/objects/developer.png"
                 width={700}
                 height={700}
@@ -160,7 +163,7 @@ function Clouds({ cloudsRef }: CloudsProps) {
                 ref={(el) => {
                     cloudsRef.current[0] = el;
                 }}
-                className="absolute top-40 opacity-30 z-0 cloud"
+                className="absolute top-40 opacity-30 z-0 cloud max-w-[40%] sm:max-w-[30%] lg:max-w-[20%]"
                 src="/images/clouds/cloud2.webp"
                 alt="Cloud 2"
                 width={200}
@@ -172,7 +175,7 @@ function Clouds({ cloudsRef }: CloudsProps) {
                 ref={(el) => {
                     cloudsRef.current[1] = el;
                 }}
-                className="absolute top-40 right-[100px] opacity-30 z-0 cloud"
+                className="absolute top-40 right-[100px] opacity-30 z-0 cloud max-w-[40%] sm:max-w-[30%] lg:max-w-[20%]"
                 src="/images/clouds/cloud1.webp"
                 alt="Cloud 1"
                 width={200}
@@ -184,7 +187,7 @@ function Clouds({ cloudsRef }: CloudsProps) {
                 ref={(el) => {
                     cloudsRef.current[2] = el;
                 }}
-                className="absolute top-40 right-[700px] opacity-30 z-0 cloud"
+                className="absolute top-40 right-[700px] opacity-30 z-0 cloud max-w-[40%] sm:max-w-[30%] lg:max-w-[20%]"
                 src="/images/clouds/cloud3.webp"
                 alt="Cloud 3"
                 width={200}
