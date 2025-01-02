@@ -22,7 +22,7 @@ export default function About() {
     COMING SOON
   </div>
   <div className="items-center text-white text-lg ">
-    Good things take time. And I'm trying my best to get it done ASAP.
+    Good things take time. And I&asop;m trying my best to get it done ASAP.
   </div>
 </div>
 

@@ -1,10 +1,5 @@
-import { Playwrite_AU_SA } from "next/font/google";
 
-const righteous = Playwrite_AU_SA({
 
-  weight: ['400'], // Specify the weights you want
-  variable: '--font-roboto', // Optional: CSS variable name
-});
 
 const CreativeMessage = () => {
   return (
@@ -13,7 +8,6 @@ const CreativeMessage = () => {
         <p
           className="text-justify leading-tight"
           style={{
-            fontFamily:"righteous",
             fontSize: "2rem", // Dynamically adjusts font size
             lineHeight: "1.1", // Close line spacing for compact wrapping
             textAlign: "justify", // Ensures even spacing on both sides
