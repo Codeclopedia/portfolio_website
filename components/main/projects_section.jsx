@@ -89,12 +89,18 @@ function WebsiteProjectsSlider({ sliderData }) {
         options={{
           type: "loop",
           perPage: 2,
+          innerHeight:100,
+          outerHeight:100,
           perMove: 1,
           omitEnd: true,
           gap: "2rem", // Adjusted for better mobile spacing
           focus: "center",
           pagination: true,
-         
+          breakpoints: {
+            500: { perPage: 1, gap: "1rem" }, 
+            768: { perPage: 1, gap: "1.5rem" }, // Adjust gap and slides per view for smaller screens
+            1024: { perPage: 2, gap: "2rem" }, // Adjust gap for medium-sized screens
+          },
         }}
       >
         {sliderData.map((slide, index) => (

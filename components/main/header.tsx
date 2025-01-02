@@ -26,7 +26,7 @@ function Header() {
         display: "block", // Show menu during animation
         ease: "power2.out",
       })
-      .to(".more_menu_style p",{
+      .to(".more_menu_style p", {
         opacity: 1,
         display: "block",
         ease: "power4.out",
@@ -55,12 +55,13 @@ function Header() {
         className="flex font-normal text-lg cursor-pointer"
         onClick={onClickMore}
       >
-        More
+        {isMenuOpened ? "Close" : "More"}
         <MoreMenuSection container={container} />
       </div>
     </div>
   );
 }
+
 
 interface MoreMenuSectionProps {
   container: React.RefObject<HTMLDivElement | null>;
