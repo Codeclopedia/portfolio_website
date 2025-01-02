@@ -29,11 +29,11 @@ const ServicesButtons: React.FC<ServicesButtonsProps> = ({
         <button
           key={buttonLabel}
           onClick={() => onButtonClick(index)} // Trigger the click event
-          className={`flex items-center justify-center space-x-2 px-4 py-2 text-lg md:text-xl ${
+          className={`${
             index === selectedIndex
               ? "bg-gray-500 text-white" // Style for selected button
-              : "bg-transparent text-black hover:bg-gray-200"
-          } rounded-md transition-all duration-300 mb-4 sm:mb-0`}
+              : "bg-transparent text-white border hover:bg-gray-600"
+          }`}
         >
           <span className="text-xl">{icon}</span>
           <span>{buttonLabel}</span>

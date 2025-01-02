@@ -132,7 +132,7 @@ export default function IntroSection() {
             </div>
             <Image
                 ref={imageRef}
-                className="absolute left-1/2 -translate-x-1/2 top-20 opacity-100 z-0 developer-image max-w-[80%] sm:max-w-[60%] md:max-w-[50%] lg:max-w-[40%]"
+                className="absolute left-1/2 -translate-x-1/2 top-40 lg:top-20 opacity-100 z-0 developer-image max-w-[80%] sm:max-w-[60%] md:max-w-[50%] lg:max-w-[40%]"
                 alt="Developer Image"
                 src="/images/objects/developer.png"
                 width={700}
