@@ -94,10 +94,7 @@ function WebsiteProjectsSlider({ sliderData }) {
           gap: "2rem", // Adjusted for better mobile spacing
           focus: "center",
           pagination: true,
-          breakpoints: {
-            768: { perPage: 1, gap: "1.5rem" }, // Adjust gap and slides per view for smaller screens
-            1024: { perPage: 2, gap: "2rem" }, // Adjust gap for medium-sized screens
-          },
+         
         }}
       >
         {sliderData.map((slide, index) => (
@@ -111,7 +108,7 @@ function WebsiteProjectsSlider({ sliderData }) {
                   objectFit="cover"
                   className="slide-image rounded-lg"
                 />
-                <div className="hover-box absolute inset-0 bg-black bg-opacity-40 flex justify-center items-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                <div className="hover-box absolute inset-0 bg-black bg-opacity-40 flex place-content-end opacity-0 hover:opacity-100 transition-opacity duration-300">
                   <div className="text-center text-white">
                     <h3 className="hover-title text-xl sm:text-2xl">{slide.title}</h3>
                     <p className="hover-subtitle text-sm sm:text-base">{slide.subtitle}</p>
