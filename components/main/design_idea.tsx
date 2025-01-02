@@ -38,7 +38,7 @@ export default function DiscussIdeas() {
   }
 
   return (
-    <div id="contact" className="min-h-screen flex flex-col justify-center px-4 sm:px-8 lg:px-16 items-center bg-black bg-gradient-to-b from-gray-900 to-[#05000d]">
+    <div id="contact" className="flex flex-col justify-center items-center bg-gradient-to-b from-gray-900 to-[#05000d]">
       {/* Main Card Section */}
       <div className="bg-lime-500 text-center w-full rounded-b-[40px] sm:rounded-b-[100px] py-12 sm:py-16 lg:py-20 px-6 sm:px-8 relative">
         {/* Headline */}

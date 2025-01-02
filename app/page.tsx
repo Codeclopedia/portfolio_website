@@ -4,6 +4,7 @@ import About from "@/components/main/about_section";
 import CreativeMessage from "@/components/objects/creative_message";
 import Projects from "@/components/main/projects_section";
 import DiscussIdeas from "@/components/main/design_idea";
+import { Divider } from "@nextui-org/divider";
 
 export default function Home() {
   return (
@@ -20,11 +21,13 @@ export default function Home() {
       {/* Page 4: Projects Section */}
       <Projects />
 
+      <Divider style={{ borderColor: "#cddc39"}} className="py-2 "/>
+
       {/* Page 5: Discuss Ideas Section */}
       <DiscussIdeas />
 
       {/* Footer */}
-      <footer className="py-6">
+      <footer className="pt-20">
         <p className="text-center text-sm sm:text-base lg:text-lg">
           Made By{" "}
           <a

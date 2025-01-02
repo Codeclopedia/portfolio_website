@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .projects {
-    @apply px-5 pt-20 sm:pt-0 bg-gradient-to-b from-[#05000d] to-gray-900 items-start h-full
+    @apply px-5 pt-20 pb-10 sm:pb-16 md:pb-32 sm:pt-0 bg-gradient-to-b from-[#05000d] to-gray-900 items-start h-full
   }
   
   .projects div {
