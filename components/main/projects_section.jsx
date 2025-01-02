@@ -18,10 +18,10 @@ export default function Projects() {
 
 function AboutTextSection() {
   return (
-    <div className="mb-8">
-      <h1 className="flex text-4xl sm:text-5xl font-bold">
+    <div className="mb-0 h-min ">
+      <h1 className="flex ">
         Projects
-        <p className="flex ml-2 text-4xl sm:text-5xl font-bold" style={{ fontFamily: "roboto" }}>
+        <p className="flex -center " style={{ fontFamily: "roboto" }}>
           .
         </p>
       </h1>

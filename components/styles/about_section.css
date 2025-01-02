@@ -11,20 +11,21 @@
 }
 
 .section2 h1 {
-  position: flex;
-  font-size: 7rem;
-  font-weight: bold;
-  margin-bottom: 4;
-  gap: 10px;
-  background: -webkit-linear-gradient(45deg, #08009f00, #fdfdfd 50%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-size:  7rem;
+    font-weight: bold;
+    margin-bottom: 4;
+    gap: 10px;
+    background: -webkit-linear-gradient(45deg, #08009f00, #fdfdfd 50%);
+    -webkit-background-clip: text;
+    /* apply background clip */
+    -webkit-text-fill-color: transparent;
 }
 
 /* Gradient text for paragraphs */
 .section2 p {
   background: -webkit-linear-gradient(45deg, #017201, #37ff00 50%);
   -webkit-background-clip: text;
+  /* apply background clip */
   -webkit-text-fill-color: transparent;
 }
 
@@ -117,13 +118,9 @@
     @apply px-3 py-6;
   }
 
-  .section2 h1 {
-    font-size: 3rem; /* Reduce font size on mobile */
-    margin-bottom: 2rem;
-  }
-
-  .section2 p {
-    font-size: 1rem; /* Adjust paragraph size on mobile */
+  .section2 h1{
+    font-size: 3.5rem;
+    height: m;
   }
 
   .service_button_style {
@@ -168,9 +165,6 @@
     margin-bottom: 3rem;
   }
 
-  .section2 p {
-    font-size: 1.125rem; /* Adjust paragraph size on tablets */
-  }
 
   /* Responsive background shapes */
   .shape1 {
@@ -206,9 +200,7 @@
     margin-bottom: 4rem;
   }
 
-  .section2 p {
-    font-size: 1.25rem; /* Adjust paragraph size for larger screens */
-  }
+
 
   /* Background shapes */
   .shape1 {

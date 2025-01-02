@@ -40,8 +40,8 @@ function WorKSection() {
 
 function AboutTextSection() {
   return (
-    <div>
-      <h1 className="text-4xl md:text-6xl flex p-0">about<p style={{ fontFamily: "roboto" }}>.</p></h1>
+    <div className="mb-0 h-min">
+      <h1 className="flex">about<p style={{ fontFamily: "roboto" }}>.</p></h1>
       <h5 className="text-lg md:text-xl">Driven by passion and fueled by creativity, I strive to turn ideas into impactful realities through dedication and innovation.</h5>
     </div>
   );

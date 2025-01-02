@@ -40,7 +40,7 @@ export default function DiscussIdeas() {
   return (
     <div id="contact" className="min-h-screen flex flex-col justify-center px-4 sm:px-8 lg:px-16 items-center bg-black bg-gradient-to-b from-gray-900 to-[#05000d]">
       {/* Main Card Section */}
-      <div className="bg-lime-500 text-center w-full rounded-b-[100px] py-12 sm:py-16 lg:py-20 px-6 sm:px-8 relative">
+      <div className="bg-lime-500 text-center w-full rounded-b-[40px] sm:rounded-b-[100px] py-12 sm:py-16 lg:py-20 px-6 sm:px-8 relative">
         {/* Headline */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-black mb-8 sm:mb-12">
           LET’S DISCUSS <br /> YOUR IDEAS
@@ -57,7 +57,7 @@ export default function DiscussIdeas() {
         </div>
 
         {/* Subtle Stars Line (Optional Decorative) */}
-        <div className="absolute top-10 left-1/2 transform -translate-x-1/2 flex space-x-4 text-black opacity-40">
+        <div className="absolute top-4 sm:top-10 left-1/2 transform -translate-x-1/2 flex space-x-4 text-black opacity-40">
           <span>★</span>
           <span>★</span>
           <span>★</span>
