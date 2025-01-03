@@ -7,7 +7,7 @@ export async function POST(req) {
 
   try {
     // Parse request body
-    const { name, email, subject, message } = await req.json();
+    const { name, email, message } = await req.json();
 
     // Create a Nodemailer transporter
     const transporter = nodemailer.createTransport({
@@ -25,7 +25,6 @@ export async function POST(req) {
       html: `
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Subject:</strong> ${subject}</p>
         <p><strong>Message:</strong> ${message}</p>
       `,
     };
