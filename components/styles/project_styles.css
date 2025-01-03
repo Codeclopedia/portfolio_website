@@ -69,13 +69,14 @@
   }
   
   .hover-title {
-    font-size: 1.2rem;
     margin: 0;
+    text-align: center;
     font-weight: bold;
   }
   
   .hover-subtitle {
     font-size: 1rem;
+    text-align: center;
     margin: 0.5rem 0 0;
   }
 

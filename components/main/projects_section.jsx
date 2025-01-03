@@ -35,53 +35,55 @@ function AboutProjectTypeSection() {
   const websiteSliderData = [
     {
       imageSrc: "/images/projects/websites/monksMinds.png",
-      title: "Project 01",
-      subtitle: "This is the first project.",
+      title: "Monks Minds",
+      subtitle: "Monks Minds is a digital solutions agency. Using Next.js, Tailwind CSS, TypeScript, and Nodemailer, I developed dynamic UIs and functionalities to create an engaging and efficient user experience.",
     },
     {
       imageSrc: "/images/projects/websites/closetRove.png",
-      title: "Project 02",
-      subtitle: "This is the second project.",
+      title: "ClosetRove Admin Dashboard",
+      subtitle: "Developed an admin dashboard for ClosetRove, a wardrobe management company. This dashboard synchronizes tasks and data between their mobile app and user data, enhancing operational efficiency.",
     },
     {
       imageSrc: "/images/projects/websites/portfolio.png",
-      title: "Project 03",
-      subtitle: "This is the third project.",
+      title: "My Portfolio",
+      subtitle: "Designed and built to showcase my skills, creativity, and experience. Featuring animations with GSAP, Splide sliders, and CSS transitions, this project is a blend of functionality and aesthetic appeal. As I grow in my journey, so will this portfolio.",
     },
   ];
+  
 
   const applicationSliderData = [
     {
       imageSrc: "/images/projects/applications/marinaWorld.png",
       title: "Marina World",
-      subtitle: "I develop the android and Ios app for marina world.",
+      subtitle: "Developed a cross-platform app for Kuwait's Marina World shopping complex, delivering an intuitive user experience for exploring stores, events, and promotions.",
     },
     {
       imageSrc: "/images/projects/applications/bvidya.png",
-      title: "Project 02",
-      subtitle: "This is the second project.",
+      title: "Bvidya",
+      subtitle: "Created an e-learning platform with features like courses, quizzes, and interactive learning materials, providing a seamless educational experience on Android and iOS.",
     },
     {
       imageSrc: "/images/projects/applications/jouri.png",
-      title: "Project 02",
-      subtitle: "This is the second project.",
+      title: "Jouri",
+      subtitle: "Developed a Kuwait-based e-commerce platform specializing in hijab and related accessories, offering a user-friendly shopping experience for Android and iOS users.",
     },
     {
       imageSrc: "/images/projects/applications/closetRove.png",
-      title: "Project 02",
-      subtitle: "This is the second project.",
+      title: "ClosetRove",
+      subtitle: "Designed and built a closet management app that helps users organize and plan outfits effectively, available on both Android and iOS platforms.",
     },
     {
       imageSrc: "/images/projects/applications/ACI.png",
-      title: "Project 02",
-      subtitle: "This is the second project.",
+      title: "ACI",
+      subtitle: "Built a construction company app to address user queries and provide detailed information about building damages and repair services, accessible on Android and iOS.",
     },
     {
       imageSrc: "/images/projects/applications/signals.png",
-      title: "Project 02",
-      subtitle: "This is the second project.",
+      title: "Signals",
+      subtitle: "Developed an e-trading app for crypto enthusiasts, offering real-time trading signals and market insights for Android and iOS users.",
     },
   ];
+  
 
   return (
     <div>
@@ -104,9 +106,9 @@ function WebsiteProjectsSlider({ sliderData }) {
         options={{
           type: "loop",
           perPage: 2,
-          innerHeight:100,
-          outerHeight:100,
-          perMove: 1,          
+          innerHeight: 100,
+          outerHeight: 100,
+          perMove: 1,
           omitEnd: true,
           gap: "2rem", // Adjusted for better mobile spacing
           focus: "center",
@@ -115,7 +117,7 @@ function WebsiteProjectsSlider({ sliderData }) {
           interval: 3000, // Slide duration in milliseconds (3 seconds)
           pauseOnHover: true, // Pause autoplay on hover
           breakpoints: {
-            500: { perPage: 1, gap: "1rem" }, 
+            500: { perPage: 1, gap: "1rem" },
             768: { perPage: 1, gap: "1.5rem" }, // Adjust gap and slides per view for smaller screens
             1024: { perPage: 2, gap: "2rem" }, // Adjust gap for medium-sized screens
           },
@@ -132,10 +134,10 @@ function WebsiteProjectsSlider({ sliderData }) {
                   objectFit="cover"
                   className="slide-image rounded-lg"
                 />
-                <div className="hover-box absolute inset-0 bg-black bg-opacity-40 flex place-content-end opacity-0 hover:opacity-100 transition-opacity duration-300">
-                  <div className="text-center text-white">
-                    <h3 className="hover-title text-xl sm:text-2xl">{slide.title}</h3>
-                    <p className="hover-subtitle text-sm sm:text-base">{slide.subtitle}</p>
+                <div className="hover-box absolute inset-0 bg-black bg-opacity-40 flex opacity-0 hover:opacity-100 transition-opacity duration-300">
+                  <div className=" text-center text-white">
+                    <h3 className="hover-title text-xl sm:text-4xl">{slide.title}</h3>
+                    <h4 className="hover-subtitle px-14 text-sm sm:text-base">{slide.subtitle}</h4>
                   </div>
                 </div>
               </div>
