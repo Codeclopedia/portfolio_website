@@ -34,17 +34,17 @@ function AboutProjectTypeSection() {
 
   const websiteSliderData = [
     {
-      imageSrc: "/images/projects/images.png",
+      imageSrc: "/images/projects/websites/monksMinds.png",
       title: "Project 01",
       subtitle: "This is the first project.",
     },
     {
-      imageSrc: "/images/projects/images-2.png",
+      imageSrc: "/images/projects/websites/closetRove.png",
       title: "Project 02",
       subtitle: "This is the second project.",
     },
     {
-      imageSrc: "/images/projects/image-3.png",
+      imageSrc: "/images/projects/websites/portfolio.png",
       title: "Project 03",
       subtitle: "This is the third project.",
     },
@@ -73,6 +73,11 @@ function AboutProjectTypeSection() {
     },
     {
       imageSrc: "/images/projects/applications/ACI.png",
+      title: "Project 02",
+      subtitle: "This is the second project.",
+    },
+    {
+      imageSrc: "/images/projects/applications/signals.png",
       title: "Project 02",
       subtitle: "This is the second project.",
     },
