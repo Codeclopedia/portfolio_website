@@ -21,13 +21,13 @@ export default function Home() {
       {/* Page 4: Projects Section */}
       <Projects />
 
-      <Divider style={{ borderColor: "#cddc39"}} className="py-2 "/>
+      <Divider className="py-2" style={{ backgroundColor:"#111827",borderColor: "#cddc39"}}/>
 
       {/* Page 5: Discuss Ideas Section */}
       <DiscussIdeas />
 
       {/* Footer */}
-      <footer className="pt-20">
+      <footer className="pt-20 bg-gradient-to-b from-gray-900 to-[#05000d]">
         <p className="text-center text-sm sm:text-base lg:text-lg">
           Made By{" "}
           <a

@@ -52,19 +52,29 @@ function AboutProjectTypeSection() {
 
   const applicationSliderData = [
     {
-      imageSrc: "/images/projects/images.png",
-      title: "Project 01",
-      subtitle: "This is the app first project.",
+      imageSrc: "/images/projects/applications/marinaWorld.png",
+      title: "Marina World",
+      subtitle: "I develop the android and Ios app for marina world.",
     },
     {
-      imageSrc: "/images/projects/images-2.png",
+      imageSrc: "/images/projects/applications/bvidya.png",
       title: "Project 02",
       subtitle: "This is the second project.",
     },
     {
-      imageSrc: "/images/projects/image-3.png",
-      title: "Project 03",
-      subtitle: "This is the third project.",
+      imageSrc: "/images/projects/applications/jouri.png",
+      title: "Project 02",
+      subtitle: "This is the second project.",
+    },
+    {
+      imageSrc: "/images/projects/applications/closetRove.png",
+      title: "Project 02",
+      subtitle: "This is the second project.",
+    },
+    {
+      imageSrc: "/images/projects/applications/ACI.png",
+      title: "Project 02",
+      subtitle: "This is the second project.",
     },
   ];
 
@@ -91,11 +101,14 @@ function WebsiteProjectsSlider({ sliderData }) {
           perPage: 2,
           innerHeight:100,
           outerHeight:100,
-          perMove: 1,
+          perMove: 1,          
           omitEnd: true,
           gap: "2rem", // Adjusted for better mobile spacing
           focus: "center",
           pagination: true,
+          autoplay: true, // Enables autoplay
+          interval: 3000, // Slide duration in milliseconds (3 seconds)
+          pauseOnHover: true, // Pause autoplay on hover
           breakpoints: {
             500: { perPage: 1, gap: "1rem" }, 
             768: { perPage: 1, gap: "1.5rem" }, // Adjust gap and slides per view for smaller screens
