@@ -39,7 +39,7 @@ function AboutProjectTypeSection() {
       subtitle: "Monks Minds is a digital solutions agency. Using Next.js, Tailwind CSS, TypeScript, and Nodemailer, I developed dynamic UIs and functionalities to create an engaging and efficient user experience.",
     },
     {
-      imageSrc: "/images/projects/websites/closetRove.png",
+      imageSrc: "/images/projects/websites/closetrove.png",
       title: "ClosetRove Admin Dashboard",
       subtitle: "Developed an admin dashboard for ClosetRove, a wardrobe management company. This dashboard synchronizes tasks and data between their mobile app and user data, enhancing operational efficiency.",
     },
@@ -53,7 +53,7 @@ function AboutProjectTypeSection() {
 
   const applicationSliderData = [
     {
-      imageSrc: "/images/projects/applications/marinaWorld.png",
+      imageSrc: "/images/projects/applications/MarinaWorld.png",
       title: "Marina World",
       subtitle: "Developed a cross-platform app for Kuwait's Marina World shopping complex, delivering an intuitive user experience for exploring stores, events, and promotions.",
     },
