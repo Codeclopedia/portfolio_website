@@ -1,60 +1,66 @@
-"use client"
-import Image from "next/image";
+"use client";
 import React, { useState } from "react";
 
-interface DesignOption {
-  title: string;
-  images: string[];
+interface FAQ {
+  question: string;
+  answer: string;
 }
 
-const DesignList: React.FC = () => {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+const FAQSection: React.FC = () => {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
-  // Dummy data for the design options
-  const designOptions: DesignOption[] = [
-    { title: "UI/UX Design", images: ["/images/projects/images-2.png", "/images/projects/images.png", "/images/projects/image-3.png"] },
-    { title: "Web Design", images: ["/images/projects/images-2.png", "/images/projects/images.png", "/images/projects/image-3.png"] },
-    { title: "Brand Design", images: ["/images/projects/images-2.png", "/images/projects/images.png", "/images/projects/image-3.png"] },
-    { title: "Graphic Design", images: ["/images/projects/images-2.png", "/images/projects/images.png", "/images/projects/image-3.png"] },
+  const faqs: FAQ[] = [
+    {
+      question: "Experience",
+      answer: "We offer app development, web development, video editing, and graphic design services.",
+    },
+    {
+      question: "Tech Stacks",
+      answer: "Our tech stacks include React, Node.js, Flutter, AWS, and more cutting-edge tools.",
+    },
+    {
+      question: "What are your rates?",
+      answer: "Our rates depend on the project scope. Please reach out for a customized quote.",
+    },
+    {
+      question: "Education",
+      answer: "Our team consists of highly skilled professionals with diverse educational backgrounds in technology and design.",
+    },
   ];
 
+  const toggleAnswer = (index: number) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
+
   return (
-    <div className="flex flex-col  w-full py-16 h-min">
-      {designOptions.map((option, index) => (
+    <div className="flex flex-col w-full max-w-3xl mx-auto py-16 px-4">
+      <h2 className="text-3xl font-bold text-gray-200 mb-8 text-center">
+        Frequently Asked Questions
+      </h2>
+      {faqs.map((faq, index) => (
         <div
           key={index}
-          className="relative flex items-center h-[120px] justify-between border-b border-gray-700 hover:bg-gray-700"
-          onMouseEnter={() => setHoveredIndex(index)}
-          onMouseLeave={() => setHoveredIndex(null)}
+          className={`border-b border-gray-700 py-4 transition-all duration-300 ${
+            activeIndex === index ? "bg-gray-800 rounded-lg" : ""
+          }`}
+          onClick={() => toggleAnswer(index)}
+          role="button"
+          tabIndex={0}
+          aria-expanded={activeIndex === index}
         >
-          {/* Title */}
-          <div className="text-gray-400 text-4xl font-semibold">{option.title}</div>
-
-          {/* Hover Arrow Icon */}
-          <div className="text-gray-400 text-xl transition-transform duration-300 transform group-hover:translate-x-1">
-            ↗
+          {/* Question */}
+          <div
+            className={`text-lg font-semibold transition-colors duration-300 ${
+              activeIndex === index ? "text-white" : "text-gray-400"
+            }`}
+          >
+            {faq.question}
           </div>
 
-          {/* Hover Image Stack */}
-          {hoveredIndex === index && (
-            <div className="absolute top-0 right-40 transform translate-x-16 -translate-y-4">
-              <div className="relative w-40 h-40">
-                {option.images.map((image, imgIndex) => (
-                  <Image
-                    key={imgIndex}
-                    src={image}
-                    width={100}
-                    height={100}
-                    alt={`Preview ${imgIndex}`}
-                    className="absolute w-40 h-40 rounded-lg shadow-lg object-cover transition-transform duration-300 hover:scale-105"
-                    style={{
-                      top: `${imgIndex * 5}px`, // Offset each image slightly downward
-                      left: `${imgIndex * 5}px`, // Offset each image slightly to the right
-                      zIndex: option.images.length - imgIndex, // Stack order
-                    }}
-                  />
-                ))}
-              </div>
+          {/* Answer */}
+          {activeIndex === index && (
+            <div className="text-gray-300 text-md mt-2">
+              {faq.answer}
             </div>
           )}
         </div>
@@ -63,4 +69,4 @@ const DesignList: React.FC = () => {
   );
 };
 
-export default DesignList;
+export default FAQSection;

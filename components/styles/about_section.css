@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .section2 {
-  @apply h-min px-5 bg-gradient-to-b from-[#05000d] to-gray-900 flex items-start;
+  @apply h-min bg-gradient-to-b from-[#05000d] to-gray-900 flex items-start;
 }
 
 .section2 div {
