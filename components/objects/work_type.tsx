@@ -24,19 +24,19 @@ const FAQSection: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="bg-gray-700 p-4 rounded-lg shadow-md">
             <strong>Freelance</strong>
-            <p className="text-sm text-gray-300">Independent projects since 2020.</p>
+            <p className="text-sm text-gray-300">App Developer, Website Developer, Video editor.</p>
           </div>
           <div className="bg-gray-700 p-4 rounded-lg shadow-md">
             <strong>Bharat Arpanet</strong>
-            <p className="text-sm text-gray-300">Developer, multiple projects.</p>
+            <p className="text-sm text-gray-300">Jr. App Developer</p>
           </div>
           <div className="bg-gray-700 p-4 rounded-lg shadow-md">
             <strong>ACI</strong>
-            <p className="text-sm text-gray-300">Critical project experience.</p>
+            <p className="text-sm text-gray-300">Sr. Developer</p>
           </div>
           <div className="bg-gray-700 p-4 rounded-lg shadow-md">
             <strong>ClosetRove</strong>
-            <p className="text-sm text-gray-300">Contractual work, ongoing.</p>
+            <p className="text-sm text-gray-300">Contractual work, App Developer.</p>
           </div>
         </div>
       ),

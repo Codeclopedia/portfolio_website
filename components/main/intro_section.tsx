@@ -64,7 +64,7 @@ export default function IntroSection() {
                         if (imageRef.current) imageRef.current.style.visibility = 'visible';
                     },
                 },
-                "-=1"
+                "-=2"
             );
 
             // Floating Tech Stacks animation
@@ -79,7 +79,7 @@ export default function IntroSection() {
                         if (techStackRef.current) techStackRef.current.style.visibility = 'visible';
                     }
                 },
-                "+=0.5"
+                "-=2.5"
             );
 
             // Header animation with ScrollTrigger

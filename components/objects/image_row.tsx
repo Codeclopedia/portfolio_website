@@ -15,7 +15,7 @@ const ImageRow: React.FC = () => {
     { src: "/images/blurred/person4.jpg", name: "###", designation: "#####" },
     { src: "/images/blurred/person7.jpg", name: "###", designation: "#####" },
     { src: "/images/blurred/person8.jpg", name: "###", designation: "#####" },
-    { src: "/images/blurred/ME.png", name: "Chetan Joshi", designation: "Software Developer" },
+    { src: "/images/blurred/Me3.png", name: "Chetan Joshi", designation: "Software Developer" },
     { src: "/images/blurred/person1.jpg", name: "###", designation: "#####" },
     { src: "/images/blurred/person2.jpg", name: "###", designation: "#####" },
     { src: "/images/blurred/person3.jpg", name: "###", designation: "#####" },
