@@ -30,7 +30,7 @@ export default function DiscussIdeas() {
 
   function downloadResume() {
     const link = document.createElement('a');
-    link.href = 'https://drive.google.com/file/d/1MoeVFd_wkMkrIu1QD5-cJ2thN8KUvUdA/view?usp=sharing'; // Path to your PDF file
+    link.href = 'https://drive.google.com/file/d/1bQv1PED8ZNUZcM2zXc_9aw3iFE9uWNm3/view?usp=sharing'; // Path to your PDF file
     link.download = 'MyCustomFileName.pdf'; // Custom file name
     document.body.appendChild(link);
     link.click();
