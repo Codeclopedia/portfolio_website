@@ -42,7 +42,7 @@ const ImageRow: React.FC = () => {
       {imageData.map((image, index) => (
         <div
           key={index}
-          className={`flex-shrink-0 group w-60 h-60 rounded-lg relative snap-center ${
+          className={`flex-shrink-0 group w-24 h-24 sm:w-32 sm:h-32 md:w-60 md:h-60 rounded-lg relative snap-center ${
             index === Math.floor(imageData.length / 2)
               ? "z-10 scale-105 shadow-lg"
               : "grayscale opacity-10"

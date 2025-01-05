@@ -4,7 +4,6 @@ import DesignList from "../objects/work_type";
 import ServicesButtons from "../objects/services_button";
 import "../styles/about_section.css";
 import ImageRow from "../objects/image_row";
-import Journey from "../objects/journey"
 
 export default function About() {
   const [selectedIndex, setSelectedIndex] = useState(0);
