@@ -4,6 +4,7 @@ import DesignList from "../objects/work_type";
 import ServicesButtons from "../objects/services_button";
 import "../styles/about_section.css";
 import ImageRow from "../objects/image_row";
+import Journey from "../objects/journey"
 
 export default function About() {
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -19,7 +20,7 @@ export default function About() {
           />
           </span>
         </div>
-        {selectedIndex === 0 ? <WorKSection /> : <div className="mt-10 py-10 h-min flex flex-col items-center justify-center bg-slate-800 text-center">
+        {selectedIndex === 0 ? <WorKSection /> : selectedIndex===1? <Journey/>:<div className="mt-10 py-10 h-min flex flex-col items-center justify-center bg-slate-800 text-center">
   <div className="font-bold text-[30px] sm:text-[50px] md:text-[100px] text-white -m-8">
     COMING SOON
   </div>

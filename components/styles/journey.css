@@ -1,0 +1,75 @@
+.timeline-container {
+    position: relative;
+    width: 100%;
+    height: 200vh; /* Enough scroll space */
+    overflow: hidden;
+    background: #1c1c2e; /* Dark grey background */
+    color: #fff; /* White text */
+  }
+  
+  .timeline-svg {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    width: 90%;
+    height: 80%;
+  }
+  
+  #timeline-path {
+    fill: transparent;
+    stroke: #4c90f0; /* Light blue for the path */
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 300;
+    stroke-dashoffset: 300;
+    transition: stroke-dashoffset 0.3s ease-out;
+  }
+  
+  .milestone {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+  }
+  
+  .milestone.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .milestone img {
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+    border-radius: 50%;
+    border: 2px solid #4c90f0; /* Light blue border for images */
+  }
+  
+  .milestone-info {
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent dark background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border-left: 4px solid #4c90f0; /* Light blue border on the left */
+  }
+  
+  .milestone h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .milestone h4 {
+    font-size: 16px;
+    margin: 5px 0;
+    color: #4c90f0; /* Light blue for the title */
+  }
+  
+  .milestone p {
+    font-size: 14px;
+    color: #ddd; /* Light grey text for the description */
+  }
+  

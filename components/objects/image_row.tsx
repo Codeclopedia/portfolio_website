@@ -15,7 +15,7 @@ const ImageRow: React.FC = () => {
     { src: "/images/blurred/person4.jpg", name: "###", designation: "#####" },
     { src: "/images/blurred/person7.jpg", name: "###", designation: "#####" },
     { src: "/images/blurred/person8.jpg", name: "###", designation: "#####" },
-    { src: "/images/blurred/person8.jpg", name: "Chetan Joshi", designation: "Software Developer" },
+    { src: "/images/blurred/ME.png", name: "Chetan Joshi", designation: "Software Developer" },
     { src: "/images/blurred/person1.jpg", name: "###", designation: "#####" },
     { src: "/images/blurred/person2.jpg", name: "###", designation: "#####" },
     { src: "/images/blurred/person3.jpg", name: "###", designation: "#####" },
@@ -45,7 +45,7 @@ const ImageRow: React.FC = () => {
           className={`flex-shrink-0 group w-60 h-60 rounded-lg relative snap-center ${
             index === Math.floor(imageData.length / 2)
               ? "z-10 scale-105 shadow-lg"
-              : "grayscale opacity-30"
+              : "grayscale opacity-10"
           }`}
           onMouseEnter={() => setHoveredIndex(index)}
           onMouseLeave={() => setHoveredIndex(null)}
