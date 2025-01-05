@@ -4,6 +4,8 @@ import DesignList from "../objects/work_type";
 import ServicesButtons from "../objects/services_button";
 import "../styles/about_section.css";
 import ImageRow from "../objects/image_row";
+import ComingSoon from "../objects/coming_soon.jsx"
+import FutureSection from "../objects/future.jsx"
 
 export default function About() {
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -19,19 +21,14 @@ export default function About() {
           />
           </span>
         </div>
-        {selectedIndex === 0 ? <WorKSection /> : <div className="mt-10 py-10 h-min flex flex-col items-center justify-center bg-slate-800 text-center">
-  <div className="font-bold text-[30px] sm:text-[50px] md:text-[100px] text-white -m-8">
-    COMING SOON
-  </div>
-  <div className="pt-6 sm:pt-4 md:pt-0 text-white text-[10px] sm:text-lg ">
-    Good things take time. I&apos;m trying my best to get it done ASAP.
-  </div>
-</div>
+        {selectedIndex === 0 ? <WorKSection /> : selectedIndex===2? <FutureSection/>:<ComingSoon/>
         }
       </div>
     </section>
   );
 }
+
+
 
 function WorKSection() {
   return (
