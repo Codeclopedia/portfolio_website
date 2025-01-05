@@ -13,14 +13,14 @@ export default function About() {
       <div className="w-full">
         <div className="flex flex-col md:flex-row w-full justify-between">
           <AboutTextSection />
-          <span className="self-center "><ServicesButtons
+          <span className="self-center"><ServicesButtons
             selectedIndex={selectedIndex}
             onButtonClick={(value) => setSelectedIndex(value)}
             listOfButtons={["Work", "Journey", "Future"]}
           />
           </span>
         </div>
-        {selectedIndex === 0 ? <WorKSection /> : selectedIndex===1? <Journey/>:<div className="mt-10 py-10 h-min flex flex-col items-center justify-center bg-slate-800 text-center">
+        {selectedIndex === 0 ? <WorKSection /> : <div className="mt-10 py-10 h-min flex flex-col items-center justify-center bg-slate-800 text-center">
   <div className="font-bold text-[30px] sm:text-[50px] md:text-[100px] text-white -m-8">
     COMING SOON
   </div>
@@ -52,9 +52,9 @@ function WorKSection() {
 
 function AboutTextSection() {
   return (
-    <div className="mb-0 h-min px-10">
+    <div className="mb-0 h-min px-4 md:px-10">
       <h1 className="flex">about<p style={{ fontFamily: "roboto" }}>.</p></h1>
-      <h5 className="w-[600px] text-xs sm:text-md md:text-xl">A boy who stands out, adding vibrancy where others fade into the background.</h5>
+      <h5 className="w-full text-xs sm:text-md md:text-xl">A boy who stands out, adding vibrancy where others fade into the background.</h5>
     </div>
   );
 }
